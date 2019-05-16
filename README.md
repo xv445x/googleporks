@@ -6,11 +6,11 @@ They're bad people.
 
 Use google search and terminal_text_color to be cuter.
 
-pip install google.
+**pip install google.**
 
 Good people -> (https://github.com/MarioVilas/googlesearch.git)
 
-pip install terminal_text_color
+**pip install terminal_text_color**
 
 Usage examples:
 
