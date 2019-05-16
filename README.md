@@ -4,7 +4,7 @@ A project to automate google dorks, I've tried it with threads, but google does 
 
 They're bad people.
 
-Use google search and terminal_text_color to be cuter.
+Use **googlesearch** and **terminal_text_color** to be cuter.
 
 **pip install google.**
 
