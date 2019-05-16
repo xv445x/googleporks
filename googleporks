@@ -1,0 +1,77 @@
+#! /usr/bin/env python
+from googlesearch import search
+import argparse
+from terminal_text_color import TextColor
+from time import sleep
+import threading
+
+
+'''
+pip install google
+pip install terminal_text_color
+
+'''
+
+tc = TextColor()
+descr = tc.opaque_yellow('''
+
+Search for dorks like a true slav. 
+Example:
+
+
+You want to do dork to renfe.com, ok good.
+You have two ways of doing it, with the option -f or option -o.
+
+''')
+
+parser = argparse.ArgumentParser(description=descr)
+parser.add_argument('-d', action="store", dest="dict", help="File to use (dict)", default="Enter file here please")
+parser.add_argument('-o', action="store", dest="othr", help="Other extra parameter", default="")
+parser.add_argument('-u', action="store", dest="url", help="site to probe like google.com, no http or https", default="")
+parser.add_argument('-e', action="store", dest="url_exc", help="exclude site, like www.facebook.com or probas.facebook.com", default="")
+parser.add_argument('-A', action="store", dest="user_agentt", help="User agent, default: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36", default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
+parser.add_argument('-n', action="store", dest="results_n", help="Max number of resultes, default: 20", default="20")
+parser.add_argument('-v', action="store_true", dest="verbose", help="verbose", default="")
+parser.add_argument('-T', action="store", dest="Threads", help="Number of Threads, only for dicts, Max 3", default=1, type=int)
+
+result = parser.parse_args()
+
+def peti(petition):
+	if result.verbose:
+		print tc.bold_red("Start serach for:  --- " + petition + " ---")
+	aleluya = search(petition, stop=int(result.results_n), user_agent=result.user_agentt, pause=50.0)
+	for urlis in aleluya:
+		print(tc.bold_yellow(urlis))
+	if result.verbose:
+		print tc.bold_red("Stop serach for:  --- " + petition + " ---")
+	aleluya.close()
+
+
+
+
+def searching(url, dict, url_exc, othr):
+	if url_exc == "":
+		url_excp = ""
+	else:
+		url_excp = "-site:%s" % url_exc
+	if url == "":
+		urlp = ""
+	else:
+		urlp = "site:%s" % url
+
+	if dict == "Enter file here please":
+		lines = othr
+		petition = "%s %s + %s" %(urlp, url_excp, othr)
+		peti(petition)
+	else:
+		f = open(result.dict, "rb")
+		lines = f.readlines()
+		f.close()
+		for i in lines:
+			petition = "%s + %s %s %s" %(urlp, i.split("\n")[0], url_excp, othr)
+			peti(petition)
+
+
+
+
+searching(result.url, result.dict, result.url_exc, result.othr)

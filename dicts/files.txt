@@ -1,0 +1,12 @@
+filetype:doc
+filetype:pdf
+filetype:xls
+filetype:txt
+filetype:ps
+filetype:rtf
+filetype:odt
+filetype:sxw
+filetype:psw
+filetype:ppt
+filetype:pps
+filetype:xml
