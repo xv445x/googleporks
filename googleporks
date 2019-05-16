@@ -15,14 +15,7 @@ pip install terminal_text_color
 tc = TextColor()
 descr = tc.opaque_yellow('''
 
-Search for dorks like a true slav. 
-Example:
-
-
-You want to do dork to renfe.com, ok good.
-You have two ways of doing it, with the option -f or option -o.
-
-Description in development
+In construction.
 ''')
 
 parser = argparse.ArgumentParser(description=descr)
@@ -33,7 +26,12 @@ parser.add_argument('-e', action="store", dest="url_exc", help="exclude site, li
 parser.add_argument('-A', action="store", dest="user_agentt", help="User agent, default: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36", default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
 parser.add_argument('-n', action="store", dest="results_n", help="Max number of resultes, default: 20", default="20")
 parser.add_argument('-v', action="store_true", dest="verbose", help="verbose", default="")
+parser.add_argument('-w', action="store", dest="Write_File", help="Write the results in a cool file.", default="")
 result = parser.parse_args()
+
+if result.Write_File != "":
+	f = open(result.Write_File, "wb")
+	f.close()
 
 def peti(petition):
 	if result.verbose:
@@ -41,6 +39,11 @@ def peti(petition):
 	aleluya = search(petition, stop=int(result.results_n), user_agent=result.user_agentt, pause=50.0)
 	for urlis in aleluya:
 		print(tc.bold_yellow(urlis))
+		if result.Write_File != "":
+			f = open(result.Write_File, "a+")
+			f.write(urlis + "\n")
+			f.close()
+
 	aleluya.close()
 
 

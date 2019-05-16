@@ -25,3 +25,17 @@ It similar, but exclude the domain www.renfe.com and only serach in subdomains. 
 ./googleporks -u renfe.com -d dicts/files.txt -n 30 -e renfe.com -o "intext:euros"
 
 The "-o" option, it's a good option to look for more cool things. 
+
+q:Can I save a souvenir from my search?
+
+Yes! with the option w in raw format. Can add -w souvenir.txt and all results and all the results will be saved there.
+
+
+                ,-,------,
+              _ \(\(_,--'
+         <`--'\>/(/(__
+         /. .  `'` '  \
+        (`')  ,        @
+         `-._,        /
+            )-)_/--( >  jv
+           ''''  ''''
