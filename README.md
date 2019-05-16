@@ -4,8 +4,10 @@ A project to automate google dorks, I've tried it with threads, but google does 
 
 Use google search and terminal_text_color to be cuter.
 
-pip install google
+pip install google.
+
 Good people -> (https://github.com/MarioVilas/googlesearch.git)
+
 pip install terminal_text_color
 
 Usage examples:
