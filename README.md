@@ -1,6 +1,8 @@
 # googleporks
 
-A project to automate google dorks, I've tried it with threads, but google does not like it, and responds with error 428. They're bad people.
+A project to automate google dorks, I've tried it with threads, but google does not like it, and responds with error 428.
+
+They're bad people.
 
 Use google search and terminal_text_color to be cuter.
 
