@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python2
 from googlesearch import search
 import argparse
 from terminal_text_color import TextColor
