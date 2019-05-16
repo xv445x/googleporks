@@ -33,18 +33,14 @@ parser.add_argument('-e', action="store", dest="url_exc", help="exclude site, li
 parser.add_argument('-A', action="store", dest="user_agentt", help="User agent, default: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36", default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
 parser.add_argument('-n', action="store", dest="results_n", help="Max number of resultes, default: 20", default="20")
 parser.add_argument('-v', action="store_true", dest="verbose", help="verbose", default="")
-parser.add_argument('-T', action="store", dest="Threads", help="Number of Threads, only for dicts, Max 3", default=1, type=int)
-
 result = parser.parse_args()
 
 def peti(petition):
 	if result.verbose:
-		print tc.bold_red("Start serach for:  --- " + petition + " ---")
+		print tc.bold_red("Searching for:  --- " + petition + " ---")
 	aleluya = search(petition, stop=int(result.results_n), user_agent=result.user_agentt, pause=50.0)
 	for urlis in aleluya:
 		print(tc.bold_yellow(urlis))
-	if result.verbose:
-		print tc.bold_red("Stop serach for:  --- " + petition + " ---")
 	aleluya.close()
 
 
