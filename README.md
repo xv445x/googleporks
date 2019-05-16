@@ -28,7 +28,7 @@ The "-o" option, it's a good option to look for more cool things.
 
 q:Can I save a souvenir from my search?
 
-Yes! with the option w in raw format. Can add -w souvenir.txt and all results and all the results will be saved there.
+Yes! with the option w in raw format. Can add -w souvenir.txt and all the results will be saved there.
 
 
                 ,-,------,
