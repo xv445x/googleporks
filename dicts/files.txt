@@ -3,6 +3,7 @@ filetype:pdf
 filetype:xls
 filetype:txt
 filetype:ps
+filetype:log
 filetype:rtf
 filetype:odt
 filetype:sxw
