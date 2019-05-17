@@ -11,3 +11,5 @@ filetype:psw
 filetype:ppt
 filetype:pps
 filetype:xml
+filetype:back
+filetype:sql
