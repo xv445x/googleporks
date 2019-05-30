@@ -1,0 +1,22 @@
+inurl:/files/_log/ filetype:log
+inurl:pipermail filetype:txt
+filetype:rdp default.rdp
+ext:env intext:APP_ENV= | intext:APP_DEBUG= | intext:APP_KEY=
+inurl:logs/gravityforms
+inurl:robots.txt intext:Disallow: /web.config
+inurl:/yum.log | intitle:yum.log + ext:log
+intitle:"index of" ".gitignore"
+intitle:"index of" "config.yml" | "config.xml" intext:login | auth
+-site:smarty.net ext:tpl intext:"
+employee "training" intitle:index.of ext:doc | pdf | xls |docx |xlsx
+ext:log intext:"connection" intitle:"index of" -stackoverflow
+intext:"successfully" intitle:"index of" config | log | logged -stackoverflow
+"air confirmation" "passenger(s)"
+filetype:txt Administrator:500:
+intext:vmware virtual site:.gov filetype:xls | xlsx | doc | pdf
+filetype:xls | xlsx intext:cisco -cisco.com site:.gov
+filetype:xls | xlsx intext:software license site:.gov
+allintitle:restricted filetype:doc site:gov
+filetype:env intext:AWS_SECRET
+filetype:env intext:mail_host + intext:bluehost
+AndroidManifest ext:xml -github -gitlab -googlesource
