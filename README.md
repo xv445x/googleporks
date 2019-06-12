@@ -41,6 +41,7 @@ Well, today I have smoked a joint, and it occurred to me to add  module --meta. 
 Example:
 
 ./googleporks -u renfe.com --meta -v -n 50
+
 That will create a folder called renfe.com, download the files and subtract the metadata.
 And it's so cool, that he created a ./renfe.com/metadata_results.txt file, where the results will be.
 
