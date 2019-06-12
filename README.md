@@ -12,7 +12,7 @@ Good people -> (https://github.com/MarioVilas/googlesearch.git)
 
 **pip install terminal_text_color**
 
-**from PyPDF2 import PdfFileReader**
+**pip install pypdf2**
 
 Usage examples:
 
