@@ -114,7 +114,7 @@ def meta():
 
 
 
-def searching(url, dict, url_exc, othr):
+def searching(url_s, dict, url_exc, othr):
 	if url_exc == "":
 		url_excp = ""
 	else:
