@@ -67,6 +67,7 @@ def meta_pdf(url_pdf):
 	try:
 		print tc.bold_yellow("File %s metadata:" % path)
 		fl = open("./%s/metadata_results.txt" % result.url_s, "a+")
+		fl.write("---Url: %s --- \n" % url_pdf)
 		fl.write("--------> File %s metadata: <------------ \n" % path)
 		fp = open(path, 'rb')
 		pdf = PdfFileReader(fp)
