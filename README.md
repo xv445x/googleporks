@@ -53,13 +53,13 @@ https://www.youtube.com/watch?v=hkC-hX_i3pw&has_verified=1
 -------------------------------------------------------------------------------------------------------------------
 21/08/2019
 **CVE-2019-11510**
-That shit it's so funny, to use that:
+That shit it's so funny, search for CVE-2019-11510 in google. To use that:
 
 Search first 20 results:
 
 ./googleporks.py --dana
 
-Select a url like .es to search for onli .es pages, it's similar to site:.es in google and search for first 450 results:
+Select a url like .es to search for only .es pages, it's similar to site:.es in google and search for first 450 results:
 
 ./googleporks.py --dana -u .es -n 450
 
