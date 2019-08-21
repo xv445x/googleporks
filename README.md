@@ -69,6 +69,7 @@ dana_gift.txt -> and dana_vulnerbles.txt.
 
 dana_vulnerbles.txt -> only save info just save information about vulnerable hosts
 
+![alt text](https://github.com/xv445x/googleporks/blob/master/CVE-2019-11510.png)
 
 
                 ,-,------,
