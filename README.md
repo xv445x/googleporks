@@ -2,6 +2,8 @@
 **NEW UPDATE!!** 
 **CVE-2019-11510**
 
+Search and check vulnerabl sites of CVE-2019-11510.
+
 A project to automate google dorks, I've tried it with threads, but google does not like it, and responds with error 428.
 
 They're bad people.
