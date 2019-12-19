@@ -10,15 +10,9 @@ They're bad people.
 
 Use **googlesearch** and **terminal_text_color** to be cuter.
 
-**pip install google.**
+**pip install -r requirements.txt**
 
-Good people -> (https://github.com/MarioVilas/googlesearch.git)
-
-**pip install terminal_text_color**
-
-**pip install pypdf2**
-
-Usage examples:
+**Usage examples:**
 
 ./googleporks.py -u renfe.com -d dicts/files.txt -n 30 
 
