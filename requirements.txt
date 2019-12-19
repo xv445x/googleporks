@@ -1,0 +1,3 @@
+pypdf2
+terminal_text_color
+google
